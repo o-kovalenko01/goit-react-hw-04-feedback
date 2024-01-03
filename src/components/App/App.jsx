@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Statistics } from '../Statistics/Statistics';
 import { FeedbackOptions } from '../Feedback/FeedbackOptions';
 import { Notification } from '../Notification/Notification';
@@ -28,10 +28,6 @@ export const App = () => {
     const total = countTotalFeedback();
     return total === 0 ? 0 : ((feedback.good / total) * 100).toFixed(0);
   };
-
-  useEffect(() => {
-    countPositiveFeedbackPercentage();
-  }, [feedback]);
 
   const totalFeedback = countTotalFeedback();
   const positivePercentage = countPositiveFeedbackPercentage();
